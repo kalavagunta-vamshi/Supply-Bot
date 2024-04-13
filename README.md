@@ -1,9 +1,5 @@
 # Supply-Bot
 Modelling of a Autonomous Warehouse Robot.
-Here's a refined README format that enhances the layout and clarity of your instructions, suitable for a GitHub project. This format includes better markdown organization and clear step-by-step instructions to improve the readability and usability of your document:
-
-```markdown
-# Project Title
 
 ## Contents
 - [1. Assembly](#1-assembly)
