@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="supplybot">
+  <link name="dummy_link">
+  <pose> 0 0 0 0 0 0 </pose>
+  </link>
+  <joint name="dummy_link_joint" type="fixed">
+    <parent link="dummy_link"/>
+    <child link="base_link"/>
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00386241766623211 0.0824457625133602 -1.59777658983604E-16"
+        rpy="0 0 0" />
+      <mass
+        value="11.5661876561443" />
+      <inertia
+        ixx="0.359530564477518"
+        ixy="-0.00151449503727212"
+        ixz="-9.37559681114183E-17"
+        iyy="1.03987705241032"
+        iyz="-1.37661101327705E-17"
+        izz="0.778582032202739" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.690196078431373 0.658823529411765 0.63921568627451 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Axle_F_R">
+    <inertial>
+      <origin
+        xyz="-7.6866584874935E-08 0.0374568477321023 0.0123779121439643"
+        rpy="0 0 0" />
+      <mass
+        value="0.0592485540841098" />
+      <inertia
+        ixx="7.57876632175712E-05"
+        ixy="-5.47886766683451E-11"
+        ixz="1.54703037208171E-10"
+        iyy="3.19180980648356E-05"
+        iyz="1.64684878328572E-05"
+        izz="5.32929964107552E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/Axle_F_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.690196078431373 0.658823529411765 0.63921568627451 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/Axle_F_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Axle_F_R_Joint"
+    type="continuous">
+    <origin
+      xyz="0.36 -0.2 0.025"
+      rpy="1.5707963267949 0 0.00816600847730061" />
+    <parent
+      link="base_link" />
+    <child
+      link="Axle_F_R" />
+    <axis
+      xyz="0 -1 0" />
+    <limit effort="10" lower="-100" upper="100" velocity="100"/>
+  </joint>
+  <link
+    name="Wheel_F_R">
+    <inertial>
+      <origin
+        xyz="1.04083408558608E-17 5.55111512312578E-17 0.0210049906221988"
+        rpy="0 0 0" />
+      <mass
+        value="0.2780204490179" />
+      <inertia
+        ixx="0.000258640936212054"
+        ixy="-4.33158297642221E-22"
+        ixz="4.81121331485343E-20"
+        iyy="0.000258640936212053"
+        iyz="1.07996700774923E-20"
+        izz="0.000459707386538612" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/Wheel_F_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/Wheel_F_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_F_R_Joint"
+    type="continuous">
+    <origin
+      xyz="0 0.015 0.0190789108517226"
+      rpy="0 0 1.59659123567033" />
+    <parent
+      link="Axle_F_R" />
+    <child
+      link="Wheel_F_R" />
+    <axis
+      xyz="0 0 1" />
+      <limit effort="10" lower="-10000000" upper="10000000" velocity="100"/>
+  </joint>
+  <link
+    name="Axle_F_L">
+    <inertial>
+      <origin
+        xyz="-7.68665847639127E-08 0.0374568477321022 0.0123779121439643"
+        rpy="0 0 0" />
+      <mass
+        value="0.0592485540841093" />
+      <inertia
+        ixx="7.57876632175715E-05"
+        ixy="-5.4788676632333E-11"
+        ixz="1.54703037136212E-10"
+        iyy="3.19180980648358E-05"
+        iyz="1.64684878328573E-05"
+        izz="5.32929964107553E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/Axle_F_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.690196078431373 0.658823529411765 0.63921568627451 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/Axle_F_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Axle_F_L_Joint"
+    type="continuous">
+    <origin
+      xyz="0.36 0.2 0.025"
+      rpy="1.5707963267949 0 3.13848766824711" />
+    <parent
+      link="base_link" />
+    <child
+      link="Axle_F_L" />
+    <axis
+      xyz="0 -1 0" />
+    <limit effort="10" lower="-100" upper="100" velocity="100"/>
+  </joint>
+  <link
+    name="Wheel_F_L">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-16 1.04083408558608E-17 -0.0199157128899587"
+        rpy="0 0 0" />
+      <mass
+        value="0.278020449017899" />
+      <inertia
+        ixx="0.000258640936212053"
+        ixy="4.17775969423003E-21"
+        ixz="1.47807249295875E-19"
+        iyy="0.000258640936212053"
+        iyz="1.08274633460741E-19"
+        izz="0.000459707386538612" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/Wheel_F_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/Wheel_F_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_F_L_Joint"
+    type="continuous">
+    <origin
+      xyz="0 0.015 0.0200003856361195"
+      rpy="-3.14159265358979 0 3.09866620889398" />
+    <parent
+      link="Axle_F_L" />
+    <child
+      link="Wheel_F_L" />
+    <axis
+      xyz="0 0 1" />
+    <limit effort="10" lower="-10000000" upper="10000000" velocity="100"/>
+  </joint>
+  <link
+    name="Wheel_R_R">
+    <inertial>
+      <origin
+        xyz="0 6.93889390390723E-18 0.0200839014739214"
+        rpy="0 0 0" />
+      <mass
+        value="0.278020449017899" />
+      <inertia
+        ixx="0.000258640936212053"
+        ixy="-1.44232257273874E-36"
+        ixz="-2.73056552552915E-21"
+        iyy="0.000258640936212053"
+        iyz="-4.89024017041303E-36"
+        izz="0.000459707386538612" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/Wheel_R_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/Wheel_R_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_R_R_Joint"
+    type="continuous">
+    <origin
+      xyz="-0.35 -0.21 0.04"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Wheel_R_R" />
+    <axis
+      xyz="0 0 1" />
+    <limit effort="10" lower="-10000000" upper="10000000" velocity="100"/>
+  </joint>
+  <link
+    name="Wheel_R_L">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 -6.93889390390723E-18 -0.0199160985260785"
+        rpy="0 0 0" />
+      <mass
+        value="0.278020449017899" />
+      <inertia
+        ixx="0.000258640936212053"
+        ixy="9.45382773994814E-37"
+        ixz="-2.73056552552915E-21"
+        iyy="0.000258640936212053"
+        iyz="3.00761249917421E-36"
+        izz="0.000459707386538612" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/Wheel_R_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://supplybot/meshes/Wheel_R_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_R_L_Joint"
+    type="continuous">
+    <origin
+      xyz="-0.35 0.21 0.04"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Wheel_R_L" />
+    <axis
+      xyz="0 0 1" />
+    <limit effort="10" lower="-10000000" upper="10000000" velocity="100"/>
+  </joint>
+  
+    <!--TRANSMISSIONS-->
+
+  <transmission name="Axle_F_R_Trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Axle_F_R_Joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Axle_F_R_Act">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  <transmission name="Axle_F_L_Trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Axle_F_L_Joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Axle_F_L_Act">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  
+  <transmission name="Wheel_R_R_Trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Wheel_R_R_Joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Wheel_R_R_Act">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  <transmission name="Wheel_R_L_Trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Wheel_R_L_Joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Wheel_R_L_Act">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <!--END EFFECTOR-->
+
+  <link name="left_end_effector">
+  <gravity>0</gravity>
+  <visual>
+  <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <box size="1 1 1"/>
+    </geometry>
+    <material name="transparent">
+    <color rgba="0 0 0 0"/>
+    </material>
+  </visual>
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
+    <mass value="0.0001"/>
+    <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
+  </inertial>
+  </link>
+  <joint name="left_end_joint" type="revolute">
+    <parent link="ur5_robot_wrist_3_link" />
+    <child link="left_end_effector" />
+    <origin rpy="0 0 0" xyz="0.08 0 .44" />
+    <limit effort="30" velocity="1.0" lower="0" upper="0" />
+  </joint>
+  <gazebo>
+    <plugin name="gazebo_ros_vacuum_gripper" filename="libgazebo_ros_vacuum_gripper.so">
+      <robotNamespace>/robot/left_vacuum_gripper</robotNamespace>
+      <bodyName>left_end_effector</bodyName>
+      <topicName>grasping</topicName>
+    </plugin>
+  </gazebo> 
+</robot>

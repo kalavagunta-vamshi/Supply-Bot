@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- Name your robot here -->
+<robot name ="supplybot" xmlns:xacro="http://wiki.ros.org/xacro">
+
+<!-- Include your urdf files here -->
+	<!-- Include Robot's urdf filepath -->
+	<!-- Include Lidar's urdf filepath -->
+	<xacro:include filename="$(find supplybot)/urdf/supplybot.urdf"/>
+	<xacro:include filename="$(find supplybot)/urdf/ur5.xacro"/>
+
+
+
+<!--  Gazebo plugin for control here is already added for you -->
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<robotNamespace>/supplybot</robotNamespace>
+			<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+			<legacyModeNS>true</legacyModeNS>
+		</plugin>
+	</gazebo>
+
+
+<!-- Create a joint between your robot and sensor -->
+ <joint name="supplybot" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.16"/>
+    <parent link="dummy_link"/>
+    <child link="ur5_robot_base_link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+</robot>	
+
+
